@@ -81,10 +81,6 @@ span {
     background-color: #1e1f26;
 }
 
-img {
-    height: 100%;
-}
-
 .group1 {
     max-width: 250vw;
     height: 329px;
@@ -118,6 +114,10 @@ img {
     height: 100%;
 }
 
+img {
+    height: 100%;
+}
+
 .text-container .button {
     position: relative;
     top: 100px;
@@ -145,4 +145,51 @@ img {
     box-shadow: 0 5px hsl(210, 96%, 44%);
     display: inline-block;
     opacity: 0.9;
+}
+
+.button:hover {
+    opacity: 1;
+}
+
+.button:active {
+    position: relative;
+    box-shadow: none;
+    transform: translateY(3px);
+}
+
+.bottom-text-container {
+    width: 300px;
+    height: 80px;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom-text-container .watch,
+.bottom-text-container .chill,
+.bottom-text-container .repeat {
+    border: 2px solid #fff;
+    padding: 5px 20px;
+    border-radius: 50px;
+    color: #fff;
+    text-align: center;
+}
+
+.bottom-text-container .watch,
+.bottom-text-container .repeat {
+    background-color: hsl(210, 96%, 44%);
+    border: none;
+}
+
+.bottom-text-container .chill {
+    border: 1px solid hsl(210, 96%, 44%);
+    color: hsl(210, 96%, 44%);
+}
+
+.bottom-text-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
