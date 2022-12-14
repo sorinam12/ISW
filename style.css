@@ -54,3 +54,20 @@
         height: 80px;
         margin: 10px;
     }
+	
+	
+    }
+    
+    form {
+        border: 2px solid var(--primary-color);
+        background-color: transparent;
+        border-radius: 50px;
+        font-family: inherit;
+        font-size: 15px;
+        padding: 0.5rem 1rem;
+        color: #fff;
+        user-select: none;
+        outline: none;
+        height: 50px;
+        margin: 10px;
+    }
