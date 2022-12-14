@@ -71,3 +71,38 @@
         height: 50px;
         margin: 10px;
     }
+	
+	  
+    fas fa {
+        color: white;
+        /* font-size: 18px;
+  font-weight: bold; */
+        margin-right: 5px;
+    }
+    
+    i fas fa-play {
+        color: white;
+        margin-right: 5px;
+    }
+    
+    .search {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        font-family: inherit;
+        font-size: 15px;
+        color: #fff;
+        height: 20px;
+        margin: 5px;
+        justify-content: center;
+    }
+    
+    .search::placeholder {
+        color: #4a4e69;
+        font-weight: bold;
+    }
+    
+    .search:focus {
+        outline: none;
+        background-color: #1e1f26;
+    }
