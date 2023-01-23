@@ -47,7 +47,22 @@
 
 
 
-
+<div class = "col-md-6 login-right">
+	<h2> Register Here</h2>
+	<form action= "registration.php" method="post">
+	<div class ="form-group">
+	<label> Username </label>
+	<input type ="text" name="user" class="form-control" required>
+	</div>
+	<div class= "form-group">
+	<label> Password</label>
+	<input type= "password" name="password" class="form-control" required>
+	</div>
+	<button type ="submit" class="btn"> Register </button>
+	
+	</form>
+	</div>
+         	</div> 
 		</div> 
       </div> 
       </div>
