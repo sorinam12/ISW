@@ -1,3 +1,19 @@
+<?php
+   session_id("mainID");
+   session_start();
+
+   function check_existence($user, $pass)
+	{
+      $conn=mysqli_connect("localhost", "root","", "userregistration") or die(mysqli_error($myConnection));
+      $sql_read = "SELECT * FROM usertable where name ='$user' and password='$pass' ";
+      $result = mysqli_query($conn, $sql_read);
+      if(! $result )
+            {
+              die('Could not read data: ' . mysqli_error($conn));
+            }
+      return mysqli_num_rows($result);
+   }
+?>
 
 <html>
    
@@ -25,7 +41,25 @@
       
       <h2>Login Here</h2> 
          
-      
+         <?php
+           
+           
+            $msg = '';
+              
+            if (isset($_POST['login']) && !empty($_POST['username']) 
+               && !empty($_POST['password'])) {
+                  $user = $_POST['username'];
+                  $pass = $_POST['password'];
+               if (check_existence($user,$pass)==1) {
+				      $_SESSION['valid'] = true;
+                  $_SESSION['timeout'] = time();
+                  $_SESSION['username'] = $user;
+                  header('Location: cinema.php');
+               }else {
+                  echo 'Wrong username or password';
+               }
+            }
+         ?>
       
       
       
