@@ -32,3 +32,30 @@ if ( isset( $_SESSION['username'] ) ) {
         </form>
  
     </header>
+
+    <div id="tags"></div>
+    <div id="myNav" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+      <!-- Overlay content -->
+      <div class="overlay-content" id="overlay-content"></div>
+
+      <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow"
+        ><i class="fas fa-arrow-left"></i
+      ></a>
+
+        <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow"><i class="fas fa-arrow-right"></i
+      ></a>
+    </div>
+    <main id="main"></main>
+    <div class="pagination">
+        <div class="page" id="prev">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div class="TotalPages" id="TotalPages">  100</div>
+        <div class="page" id="next">Next Page</div>
+    </div>
+    <script src="script_Cinema.js"></script>
+</body>
+
+</html>
