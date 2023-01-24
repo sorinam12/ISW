@@ -203,3 +203,39 @@ function getMovies(url) {
       }
     });
 }
+// Show Movies Images & Info
+function showMovies(data) {
+  main.innerHTML = "";
+
+  data.forEach((movie) => {
+    const { title, poster_path, vote_average, overview, id } = movie;
+    const movieEl = document.createElement("div");
+    movieEl.classList.add("movie");
+    movieEl.innerHTML = `
+             <img src="${
+               poster_path ? IMG_URL + poster_path : "/assets/cinema.jpg"
+             }" alt="${title}">
+            <div class="movie-info">
+                <h3>${title}</h3>
+                
+                <span class="${getColor(vote_average)}">${vote_average}</span>
+            </div>
+            <div class="overview">
+                <h3>${title}</h3>
+                ${overview}
+                <br/> 
+                <button class="know-more" id="${id}">Watch Trailer <i class="fas fa-arrow-right"></i></button>
+                <a class="button" href="comm.php">Comments</a>
+            </div>
+        
+        `;
+
+    main.appendChild(movieEl);
+
+    document.getElementById(id).addEventListener("click", () => {
+      console.log(id);
+      openNav(movie);
+    });
+  });
+}
+
