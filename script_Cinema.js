@@ -164,6 +164,7 @@ function clearBtn() {
     tagsEl.append(clear);
   }
 }
+
 // Get Movies
 getMovies(API_URL);
 
@@ -286,6 +287,7 @@ function openNav(movie) {
     });
 }
 
+/* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
@@ -346,5 +348,49 @@ function getColor(vote) {
     return "orange";
   } else {
     return "red";
+  }
+}
+
+// Search Any Movie on Search Bar
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const searchTerm = search.value;
+  selectedGenre = [];
+  setGenre();
+  if (searchTerm) {
+    getMovies(searchURL + "&query=" + searchTerm);
+  } else {
+    getMovies(API_URL);
+  }
+});
+
+// Go to current, Next & Previous Page
+prev.addEventListener("click", () => {
+  if (prevPage > 0) {
+    pageCall(prevPage);
+  }
+});
+
+next.addEventListener("click", () => {
+  if (nextPage <= totalPages) {
+    pageCall(nextPage);
+  }
+});
+
+function pageCall(page) {
+  let urlSplit = lastUrl.split("?");
+  let queryParams = urlSplit[1].split("&");
+  let key = queryParams[queryParams.length - 1].split("=");
+  if (key[0] != "page") {
+    let url = lastUrl + "&page=" + page;
+    getMovies(url);
+  } else {
+    key[1] = page.toString();
+    let a = key.join("=");
+    queryParams[queryParams.length - 1] = a;
+    let b = queryParams.join("&");
+    let url = urlSplit[0] + "?" + b;
+    getMovies(url);
   }
 }
